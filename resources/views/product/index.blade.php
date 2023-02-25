@@ -102,17 +102,17 @@
             <tr>
                 <td>Product with highest Price</td>
                 <td>select * from products order by price desc  limit 1 </td>
-                <td>{{ "$products_with_highest_price->name is the product with highest price ( price = $products_with_highest_price->price)"}}</td>
+                <td>{{ $products_with_highest_price ? "$products_with_highest_price->name is the product with highest price ( price = $products_with_highest_price->price)" : null }}</td>
             </tr>
             <tr>
                  <td>product with 2nd highest price</td>
                  <td>select * from ( select * from products p order by price desc limit 1,1) as a </td>
-                 <td>{{ "$products_with_2nd_highest_price->name is the product with 2nd highest price ( price = $products_with_2nd_highest_price->price)"}}</td>
+                 <td>{{ $products_with_2nd_highest_price ? "$products_with_2nd_highest_price->name is the product with 2nd highest price ( price = $products_with_2nd_highest_price->price)" : null }}</td>
             </tr>
             <tr>
                  <td>Product with greatest quantity</td>
                  <td>select * from products order by quantity  desc  limit 1 </td>
-                 <td>{{ "$products_with_highest_quantity->name is the product with highest price ( price = $products_with_highest_quantity->price)"}}</td>
+                 <td>{{ $products_with_highest_quantity ?  "$products_with_highest_quantity->name is the product with highest price ( price = $products_with_highest_quantity->price)" : null }}</td>
             </tr>
             
         </tbody>
